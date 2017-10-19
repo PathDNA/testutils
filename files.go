@@ -17,6 +17,7 @@ func TmpDir(tb testing.TB, prefix string) (path string, cleanup func(), ok bool)
 }
 
 func FailIf(tb testing.TB, err error) (failed bool) {
+	tb.Helper()
 	if failed = err != nil; failed {
 		tb.Error(err)
 	}
