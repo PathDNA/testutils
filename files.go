@@ -23,3 +23,10 @@ func FailIf(tb testing.TB, err error) (failed bool) {
 	}
 	return
 }
+
+func FatalIf(tb testing.TB, err error) {
+	tb.Helper()
+	if err != nil {
+		tb.Fatal(err)
+	}
+}
